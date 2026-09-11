@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImaniSolution | Jasa Website, Pulsa, Kuota & Token Listrik</title>
+    
+    <meta name="description" content="ImaniSolution menyediakan jasa pembuatan website profesional, company profile, landing page, pulsa, paket data, dan token listrik.">
+    <meta property="og:title" content="ImaniSolution | Solusi Digital untuk Kebutuhan Anda">
+    <meta property="og:description" content="Jasa pembuatan website profesional serta kebutuhan digital harian seperti pulsa, kuota, dan token listrik.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Inline CSS untuk memastikan langsung rapi tanpa kendala cache -->
+    <style>
+        :root {
+            --navy-primary: #0A192F;
+            --navy-light: #1E293B;
+            --navy-card: #112240;
+            --bg-main: #0F172A;
+            --bg-card: #1E293B;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --accent-blue: #3B82F6;
+            --accent-emerald: #10B981;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), #2563EB);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-blue);
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.05rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-block {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        /* Navbar */
+        .navbar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .navbar-container.scrolled {
+            background: rgba(10, 25, 47, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--text-main);
+        }
+
+        .logo-icon {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+        }
+
+        .nav-menu ul {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-blue);
+        }
+
+        .nav-action {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 0 100px;
+            background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 50px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .hero-text h1 {
+            font-size: 3.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mockup-window {
+            width: 100%;
+            max-width: 450px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .mockup-header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background: #EF4444; }
+        .dot.yellow { background: #F59E0B; }
+        .dot.green { background: #10B981; }
+
+        .mockup-url {
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.15rem 0.75rem;
+            border-radius: 4px;
+        }
+
+        .mockup-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mockup-card-mini {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .mockup-card-mini i {
+            font-size: 1.5rem;
+            color: var(--accent-emerald);
+            background: rgba(16, 185, 129, 0.1);
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+
+        .mockup-card-mini h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .mockup-card-mini p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .mockup-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+        }
+
+        .stat-item span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .service-icon.blue {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+        }
+
+        .service-icon.emerald {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-emerald);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* Pricing */
+        .pricing-section {
+            background: rgba(10, 25, 47, 0.5);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--accent-blue);
+            background: linear-gradient(180deg, rgba(30, 41, 59, 1) 0%, rgba(17, 34, 64, 1) 100%);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-blue);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li i {
+            color: var(--accent-emerald);
+        }
+
+        /* Steps & Features */
+        .steps-section {
+            background: rgba(15, 23, 42, 0.4);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            position: relative;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            opacity: 0.4;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .step-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            flex-grow: 1;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .feature-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            border-color: var(--accent-emerald);
+        }
+
+        .feature-item > i {
+            font-size: 1.5rem;
+            color: var(--accent-emerald);
+            background: rgba(16, 185, 129, 0.1);
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* About */
+        .about-section {
+            background: rgba(10, 25, 47, 0.8);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-badges-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .about-card-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-card-box i {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .about-card-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-card-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Contact & Footer */
+        .contact-section {
+            padding-bottom: 80px;
+        }
+
+        .contact-card-main {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--navy-card) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-actions {
+            margin-bottom: 3rem;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2.5rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info-item > i {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info-item span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        .contact-info-item strong {
+            font-size: 1rem;
+            color: var(--text-main);
+            word-break: break-all;
+        }
+
+        .footer {
+            background: var(--navy-primary);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .floating-wa {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: #ffffff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .floating-wa i {
+            font-size: 1.5rem;
+        }
+
+        .floating-wa:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .steps-grid, .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-badges {
+                justify-content: center;
+            }
+            .hero-text p {
+                margin: 0 auto 2rem;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--bg-main);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                border-right: 1px solid var(--border-color);
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 2rem;
+                font-size: 1.2rem;
+            }
+            .nav-action .btn {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .services-grid, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-card.popular {
+                transform: none;
+            }
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .floating-text {
+                display: none;
+            }
+            .floating-wa {
+                padding: 0.75rem;
+                border-radius: 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .steps-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-card-main {
+                padding: 2.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar-container scrolled" id="navbar">
+        <div class="nav-content container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-cube logo-icon"></i>
+                <span>ImaniSolution</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#layanan" class="nav-link">Layanan</a></li>
+                    <li><a href="#harga" class="nav-link">Harga</a></li>
+                    <li><a href="#tentang" class="nav-link">Tentang</a></li>
+                    <li><a href="#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-action">
+                <a href="https://wa.me/628" target="_blank" class="btn btn-primary btn-wa-trigger">
+                    <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="hero-badges">
+                    <span class="badge"><i class="fa-solid fa-check"></i> Website Responsive</span>
+                    <span class="badge"><i class="fa-solid fa-check"></i> Harga Terjangkau</span>
+                    <span class="badge"><i class="fa-solid fa-check"></i> Proses Cepat</span>
+                    <span class="badge"><i class="fa-solid fa-check"></i> Support</span>
+                </div>
+                <h1>Solusi Digital untuk Kebutuhan Anda</h1>
+                <p>Bangun website profesional dan penuhi kebutuhan digital harian seperti pulsa, paket data, dan token listrik bersama ImaniSolution.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/628" target="_blank" class="btn btn-primary btn-lg btn-wa-trigger">
+                        Mulai Konsultasi <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#layanan" class="btn btn-outline btn-lg">Lihat Layanan</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="mockup-window">
+                    <div class="mockup-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="mockup-url">imanisolution.github.io</span>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-card-mini">
+                            <i class="fa-solid fa-code"></i>
+                            <div>
+                                <h4>Website &amp; Dev</h4>
+                                <p>Modern &amp; Responsive</p>
+                            </div>
+                        </div>
+                        <div class="mockup-card-mini">
+                            <i class="fa-solid fa-bolt"></i>
+                            <div>
+                                <h4>Digital Service</h4>
+                                <p>Pulsa, Kuota &amp; PLN</p>
+                            </div>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-item">
+                                <strong>100%</strong>
+                                <span>Static &amp; Fast</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>24/7</strong>
+                                <span>Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN SECTION -->
+    <section id="layanan" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Layanan ImaniSolution</h2>
+                <p>Solusi digital lengkap untuk mendukung perkembangan bisnis dan kebutuhan harian Anda.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon blue"><i class="fa-solid fa-code"></i></div>
+                    <h3>Website Development</h3>
+                    <p>Pembuatan website modern dan responsive untuk bisnis, UMKM, organisasi, maupun kebutuhan personal.</p>
+                    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ImaniSolution,%20saya%20tertarik%20dengan%20layanan%20Website%20Development" target="_blank" class="btn btn-outline btn-sm">
+                        Pesan Sekarang <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon blue"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Company Profile</h3>
+                    <p>Website profesional untuk memperkenalkan bisnis, layanan, produk, dan informasi perusahaan.</p>
+                    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ImaniSolution,%20saya%20tertarik%20dengan%20layanan%20Company%20Profile" target="_blank" class="btn btn-outline btn-sm">
+                        Pesan Sekarang <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon blue"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Landing Page</h3>
+                    <p>Landing page modern untuk promosi produk, jasa, campaign, dan kebutuhan marketing.</p>
+                    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ImaniSolution,%20saya%20tertarik%20dengan%20layanan%20Landing%20Page" target="_blank" class="btn btn-outline btn-sm">
+                        Pesan Sekarang <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon emerald"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Pulsa &amp; Paket Data</h3>
+                    <p>Isi pulsa dan paket data berbagai operator dengan proses mudah dan cepat.</p>
+                    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ImaniSolution,%20saya%20ingin%20isi%20Pulsa%20dan%20Paket%20Data" target="_blank" class="btn btn-outline btn-sm">
+                        Pesan Sekarang <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon emerald"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Token Listrik</h3>
+                    <p>Pembelian token listrik PLN secara praktis untuk kebutuhan rumah maupun bisnis.</p>
+                    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ImaniSolution,%20saya%20ingin%20beli%20Token%20Listrik" target="_blank" class="btn btn-outline btn-sm">
+                        Pesan Sekarang <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon emerald"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Layanan Digital</h3>
+                    <p>Berbagai kebutuhan digital lainnya yang dapat dikembangkan sesuai kebutuhan pelanggan.</p>
+                    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ImaniSolution,%20saya%20ingin%20konsultasi%20Layanan%20Digital%20lainnya" target="_blank" class="btn btn-outline btn-sm">
+                        Pesan Sekarang <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="harga" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Paket Website</h2>
+                <p>Pilih paket pembuatan website yang sesuai dengan skala dan kebutuhan bisnis Anda.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>STARTER</h3>
+                        <div class="price">Mulai dari Rp XXX.XXX</div>
+                        <p>Cocok untuk personal atau bisnis rintisan yang ingin online.</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> 1–5 halaman</li>
+                        <li><i class="fa-solid fa-check"></i> Responsive semua device</li>
+                        <li><i class="fa-solid fa-check"></i> Hosting &amp; Domain setup</li>
+                        <li><i class="fa-solid fa-check"></i> Integrasi WhatsApp</li>
+                        <li><i class="fa-solid fa-check"></i> SEO dasar</li>
+                    </ul>
+                    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ImaniSolution,%20saya%20tertarik%20dengan%20Paket%20Website%20STARTER" target="_blank" class="btn btn-outline btn-block">Konsultasi</a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">PALING POPULER</div>
+                    <div class="pricing-header">
+                        <h3>BUSINESS</h3>
+                        <div class="price">Mulai dari Rp XXX.XXX</div>
+                        <p>Solusi lengkap untuk UMKM dan perusahaan memperkenalkan brand.</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Company Profile profesional</li>
+                        <li><i class="fa-solid fa-check"></i> Responsive &amp; modern design</li>
+                        <li><i class="fa-solid fa-check"></i> Landing page interaktif</li>
+                        <li><i class="fa-solid fa-check"></i> Integrasi WhatsApp</li>
+                        <li><i class="fa-solid fa-check"></i> Google Maps &amp; SEO dasar</li>
+                    </ul>
+                    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ImaniSolution,%20saya%20tertarik%20dengan%20Paket%20Website%20BUSINESS" target="_blank" class="btn btn-primary btn-block">Konsultasi</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>CUSTOM</h3>
+                        <div class="price">Hubungi Kami</div>
+                        <p>Sistem kompleks khusus sesuai permintaan unik bisnis Anda.</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Sistem sesuai kebutuhan</li>
+                        <li><i class="fa-solid fa-check"></i> Custom Dashboard</li>
+                        <li><i class="fa-solid fa-check"></i> Database &amp; Backend support</li>
+                        <li><i class="fa-solid fa-check"></i> Integrasi API pihak ketiga</li>
+                        <li><i class="fa-solid fa-check"></i> Fitur custom sepenuhnya</li>
+                    </ul>
+                    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ImaniSolution,%20saya%20ingin%20diskusi%20project%20CUSTOM" target="_blank" class="btn btn-outline btn-block">Diskusikan Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARA PESAN SECTION -->
+    <section id="cara-pesan" class="steps-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cara Memesan</h2>
+                <p>Proses pemesanan layanan digital di ImaniSolution sangat mudah dan transparan.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Konsultasi</h3>
+                    <p>Hubungi kami melalui WhatsApp untuk mendiskusikan kebutuhan atau layanan yang Anda inginkan.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Tentukan kebutuhan</h3>
+                    <p>Kami akan membantu merumuskan spesifikasi, fitur, atau nominal produk digital yang tepat.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Proses pengerjaan</h3>
+                    <p>Tim kami langsung memproses pembuatan website atau transaksi digital Anda dengan cepat.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h3>Selesai &amp; siap digunakan</h3>
+                    <p>Website Anda siap online atau produk digital harian Anda langsung masuk dan aktif.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN SECTION -->
+    <section id="keunggulan" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Kenapa ImaniSolution?</h2>
+                <p>Alasan utama mengapa individu, UMKM, dan bisnis mempercayakan kebutuhan digitalnya kepada kami.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <div>
+                        <h4>Desain modern</h4>
+                        <p>Tampilan visual mengikuti tren teknologi dan startup terkini.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <div>
+                        <h4>Responsive semua perangkat</h4>
+                        <p>Optimal diakses melalui HP, tablet, laptop, maupun desktop.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-tag"></i>
+                    <div>
+                        <h4>Harga terjangkau</h4>
+                        <p>Solusi profesional dengan penawaran harga yang ramah di kantong.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-sliders"></i>
+                    <div>
+                        <h4>Bisa request fitur</h4>
+                        <p>Kustomisasi fungsionalitas sesuai dengan spesifikasi bisnis Anda.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-headset"></i>
+                    <div>
+                        <h4>Support setelah pengerjaan</h4>
+                        <p>Dukungan teknis dan pemeliharaan lanjutan setelah project selesai.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-feather"></i>
+                    <div>
+                        <h4>Website ringan</h4>
+                        <p>Performa cepat dan optimal tanpa membebani kuota pengguna.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div>
+                        <h4>Bisa dikembangkan</h4>
+                        <p>Struktur kode yang bersih memudahkan penambahan fitur di masa depan.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-comments"></i>
+                    <div>
+                        <h4>Konsultasi kebutuhan</h4>
+                        <p>Diskusi terbuka untuk menemukan strategi digital terbaik Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="tentang" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Tentang ImaniSolution</h2>
+                    <p>ImaniSolution hadir untuk membantu individu, UMKM, dan bisnis mendapatkan solusi digital yang praktis, modern, dan terjangkau. Mulai dari pembuatan website hingga kebutuhan digital sehari-hari seperti pulsa, paket data, dan token listrik.</p>
+                    <div class="about-badges-group">
+                        <span class="badge"><i class="fa-solid fa-check"></i> Digital Service</span>
+                        <span class="badge"><i class="fa-solid fa-check"></i> Website Development</span>
+                        <span class="badge"><i class="fa-solid fa-check"></i> Customer Support</span>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-card-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Terpercaya &amp; Aman</h3>
+                        <p>Komitmen tinggi dalam memberikan pelayanan digital yang aman dan dapat diandalkan setiap hari.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK SECTION -->
+    <section id="kontak" class="contact-section">
+        <div class="container">
+            <div class="contact-card-main">
+                <div class="section-header" style="margin-bottom: 2rem;">
+                    <h2>Punya kebutuhan digital?</h2>
+                    <p>Ceritakan kebutuhan Anda kepada kami dan mari cari solusi yang tepat.</p>
+                </div>
+
+                <div class="contact-actions">
+                    <a href="https://wa.me/628" target="_blank" class="btn btn-primary btn-lg btn-wa-trigger">
+                        <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                    </a>
+                </div>
+
+                <div class="contact-info-grid">
+                    <div class="contact-info-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <span>WhatsApp</span>
+                            <strong class="text-whatsapp">628XXXXXXXXXX</strong>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <span>Email</span>
+                            <strong class="text-email">email@example.com</strong>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <span>Lokasi</span>
+                            <strong>Indonesia</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <i class="fa-solid fa-cube logo-icon"></i>
+                        <span>ImaniSolution</span>
+                    </a>
+                    <p>Solusi Digital untuk Kebutuhan Anda.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#layanan">Layanan</a></li>
+                        <li><a href="#harga">Harga</a></li>
+                        <li><a href="#tentang">Tentang</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> ImaniSolution. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/628" target="_blank" class="floating-wa btn-wa-trigger" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="floating-text">Chat WhatsApp</span>
+    </a>
+
+    <!-- JavaScript Configuration -->
+    <script>
+        const CONFIG = {
+            whatsapp: "628XXXXXXXXXX",
+            email: "email@example.com",
+            businessName: "ImaniSolution"
+        };
+    </script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
